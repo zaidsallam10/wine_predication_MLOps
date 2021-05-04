@@ -9,9 +9,11 @@ jobs:
               - name: cml_run
                 env:
                     repo_token: ${{ secrets.GITHUB_TOKEN }}
-                run:
-                # My ML Worlflow goes here
-                        pip install -r requirements.txt
-                        python train.py
-                        echo "Model Metrics"
-                        cat metrics.txt
+                run: |
+                
+                    # My ML Worlflow goes here
+                    pip install -r requirements.txt
+                    python train.py
+
+                    echo "Model Metrics"
+                    cat metrics.txt
