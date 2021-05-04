@@ -12,5 +12,5 @@ jobs:
                 run:
                 
                 # My ML Worlflow goes here
-                pip install -r requirements.txt
-                python train.py
+                    pip install -r requirements.txt
+                    python train.py
