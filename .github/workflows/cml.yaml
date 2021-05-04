@@ -22,8 +22,7 @@ jobs:
                     echo "# This commit has a random forest regressor algorithm with 5 as max-depth " >> report.md
                     echo "## Model Metrics" >> report.md
                     cat metrics.txt >> report.md
-                    echo "## Data Visualization" >> report.md
+                    echo "## Data Visualization Report" >> report.md
                     cml-publish feature_importance.png --md >> report.md
-                    cml-publish residuals.png --md >> report.md
                     
                     cml-send-comment report.md
