@@ -19,7 +19,7 @@ jobs:
                         repo_token: ${{ secrets.GITHUB_TOKEN }}
                 run: |
                 
-                    echo "# This commit has a random forest regressor algorithm with 5 as max-depth " >> report.md
+                    echo "# This commit has a random forest regressor algorithm with 2 as max-depth " >> report.md
                     echo "## Model Metrics" >> report.md
                     cat metrics.txt >> report.md
                     echo "## Data Visualization Report" >> report.md
