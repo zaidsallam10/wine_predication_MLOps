@@ -11,7 +11,7 @@ jobs:
                     repo_token: ${{ secrets.GITHUB_TOKEN }}
                 run: |
                 
-                    # My ML Worlflow goes here
+                    # My ML Worlflow goes heree
                     pip install -r requirements.txt
                     python train.py
 
