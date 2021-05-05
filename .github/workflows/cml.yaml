@@ -6,12 +6,23 @@ jobs:
         container: docker://dvcorg/cml-py3:latest
         steps:
               - uses: actions/checkout@v2
-              - name: cml_run
+              - name: Train model
                 env:
                     repo_token: ${{ secrets.GITHUB_TOKEN }}
-                run:
-                # My ML Worlflow goes here
-                        pip install -r requirements.txt
-                        python train.py
-                        echo "Model Metrics"
-                        cat metrics.txt
+                run: |
+                
+                    # My ML Worlflow goes heree
+                    pip install -r requirements.txt
+                    python train.py
+              - name: Write Continuos ML CML report
+                env:
+                        repo_token: ${{ secrets.GITHUB_TOKEN }}
+                run: |
+                
+                    echo "# This commit has a random forest regressor algorithm with 2 as max-depth" >> report.md
+                    echo "## Model Metrics" >> report.md
+                    cat metrics.txt >> report.md
+                    echo "## Data Visualization Report" >> report.md
+                    cml-publish feature_importance1.png --md >> report.md
+                    
+                    cml-send-comment report.md
